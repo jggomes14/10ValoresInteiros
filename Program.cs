@@ -30,7 +30,7 @@
             Console.WriteLine($"O Valor Médio da Sequência é {ValorMedio}");
 
         }
-        static void PuxarOsValoresNegativos(int[] valores, int tamanho)
+        static void PuxarOsValoresNegativos(int[] valores)
         {
             int qtdNegativos = 0;
             for (int i = 0; i < valores.Length; i++)
@@ -102,7 +102,7 @@
             int tamanho = valores.Length;
             CalcularOsValoresMaioresEMenores(valores, tamanho);
             PuxarOsTresMaioresValores(valores);
-            PuxarOsValoresNegativos(valores, tamanho);
+            PuxarOsValoresNegativos(valores);
             ItemRemovidoDaSequencia(valores);
         }
     }
