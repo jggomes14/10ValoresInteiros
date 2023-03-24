@@ -44,13 +44,13 @@
 
             int[] ValoresNegativos = new int[qtdNegativos];
 
-            int index = 0;
+            int posicao1 = 0;
             for (int i = 0; i < valores.Length; i++)
             {
                 if (valores[i] < 0)
                 {
-                    ValoresNegativos[index] = valores[i];
-                    index++;
+                    ValoresNegativos[posicao1] = valores[i];
+                    posicao1++;
                 }
             }
             for (int i = 0; i < qtdNegativos; i++)
@@ -79,7 +79,23 @@
             }
 
         }
+        static void ItemRemovidoDaSequencia(int[] valores)
+        {
+            int tamanhoNovoArrayComUmAMenos = valores.Length - 1;
+            int[] valoresRemovidos = new int[tamanhoNovoArrayComUmAMenos];
+            int posicao2 = 0;
+            for (int i = 0; i < tamanhoNovoArrayComUmAMenos; i++)
+            {
+                valoresRemovidos[posicao2] = valores[i];
+                posicao2++;
+            }
+            for (int i = 0; i < tamanhoNovoArrayComUmAMenos; i++)
+            {
+                Console.WriteLine($"Os Valores do Array com um a menos são {valoresRemovidos[i]}");
 
+            }
+
+        }
         static void Main(string[] args)
         {
             int[] valores = new int[] { -5, 3, 4, 5, 9, 6, 10, -2, 11, 1, 2, 6, 7, 8, 0, -6 };
@@ -87,7 +103,7 @@
             CalcularOsValoresMaioresEMenores(valores, tamanho);
             PuxarOsTresMaioresValores(valores);
             PuxarOsValoresNegativos(valores, tamanho);
-            
+            ItemRemovidoDaSequencia(valores);
         }
     }
 }
